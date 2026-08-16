@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Viagem 2027 · Bélgica · Suíça · Itália</title>
+<meta name="theme-color" content="#0b1220">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+<style>
+:root{
+  --bg:#0b1220; --bg2:#111c30; --card:rgba(255,255,255,.055); --card2:rgba(255,255,255,.09);
+  --line:rgba(255,255,255,.12); --txt:#eaf0fa; --dim:#93a4c0; --dim2:#6d7f9c;
+  --acc:#7cc4ff; --acc2:#b8e0ff; --warm:#ffcf7d; --good:#6fe3b0; --bad:#ff8a8a; --pink:#ffa8c8;
+  --r:18px; --sh:0 10px 34px rgba(0,0,0,.42);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:
+    radial-gradient(1100px 620px at 82% -12%, #1d3a63 0%, transparent 62%),
+    radial-gradient(880px 520px at 8% 4%, #23324f 0%, transparent 58%),
+    linear-gradient(180deg,#0b1220 0%,#0a101c 100%);
+  background-attachment:fixed;
+  color:var(--txt);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  min-height:100vh; padding-bottom:96px; overflow-x:hidden;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+h1,h2,h3{margin:0;line-height:1.2;font-weight:650;letter-spacing:-.015em}
+a{color:var(--acc)}
+button,input,select,textarea{font:inherit;color:inherit}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.muted{color:var(--dim)}.small{font-size:13px}.tiny{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim2);font-weight:600}
+.row{display:flex;gap:10px;align-items:center}.between{justify-content:space-between}.wrapf{flex-wrap:wrap}
+.grow{flex:1;min-width:0}
+.hide{display:none !important}
+
+/* ---------- header ---------- */
+header{padding:26px 0 6px;text-align:center}
+.eyebrow{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);font-weight:700}
+header h1{font-size:27px;margin:8px 0 4px}
+header .sub{color:var(--dim);font-size:13.5px}
+
+/* ---------- hero ---------- */
+.hero{margin:18px 0;padding:22px 18px;border-radius:24px;position:relative;overflow:hidden;
+  background:linear-gradient(155deg,rgba(124,196,255,.17),rgba(255,255,255,.04) 55%,rgba(255,168,200,.10));
+  border:1px solid rgba(255,255,255,.16);box-shadow:var(--sh)}
+.hero:after{content:"";position:absolute;inset:-40% -20% auto auto;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(124,196,255,.28),transparent 68%);pointer-events:none}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.cd div{background:rgba(0,0,0,.26);border:1px solid var(--line);border-radius:14px;padding:12px 4px;text-align:center}
+.cd b{display:block;font-size:29px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.cd span{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.upnext-lbl{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:700}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--good);box-shadow:0 0 0 0 rgba(111,227,176,.7);animation:p 2.1s infinite}
+@keyframes p{0%{box-shadow:0 0 0 0 rgba(111,227,176,.6)}70%{box-shadow:0 0 0 12px rgba(111,227,176,0)}100%{box-shadow:0 0 0 0 rgba(111,227,176,0)}}
+.up-title{font-size:25px;font-weight:680;margin:10px 0 4px;letter-spacing:-.02em}
+.up-when{color:var(--warm);font-weight:600;font-size:14px}
+.up-now{margin-top:14px;padding-top:13px;border-top:1px solid var(--line)}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.chip{font-size:12px;padding:5px 11px;border-radius:999px;background:rgba(0,0,0,.28);border:1px solid var(--line);color:var(--dim)}
+
+/* ---------- nav ---------- */
+nav{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(10,16,28,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:7px 6px calc(7px + env(safe-area-inset-bottom))}
+.navin{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);gap:2px}
+nav button{background:none;border:0;padding:7px 2px;border-radius:12px;color:var(--dim2);display:flex;flex-direction:column;align-items:center;gap:3px;font-size:9.5px;font-weight:600;cursor:pointer;transition:.15s}
+nav button svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+nav button.on{color:var(--acc);background:rgba(124,196,255,.12)}
+
+section{display:none;animation:f .22s ease}
+section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.sec-h{margin:22px 0 12px}
+.sec-h h2{font-size:20px}
+
+/* ---------- itinerary ---------- */
+.day{margin-bottom:10px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);overflow:hidden}
+.day.today{border-color:rgba(124,196,255,.55);box-shadow:0 0 0 1px rgba(124,196,255,.22)}
+.day.past{opacity:.5}
+.dhead{display:flex;gap:12px;align-items:center;padding:13px 15px;cursor:pointer;user-select:none}
+.dnum{width:44px;flex:0 0 44px;text-align:center;background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:11px;padding:5px 0}
+.dnum b{display:block;font-size:17px;line-height:1.1}
+.dnum span{font-size:9.5px;text-transform:uppercase;color:var(--dim2);letter-spacing:.06em}
+.dttl{font-weight:620;font-size:15px}
+.dsub{font-size:12px;color:var(--dim)}
+.caret{color:var(--dim2);transition:.2s;flex:0 0 auto}
+.day.open .caret{transform:rotate(90deg)}
+.dbody{display:none;padding:0 15px 15px;border-top:1px solid var(--line)}
+.day.open .dbody{display:block}
+.ev{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
+.ev:last-child{border-bottom:0;padding-bottom:2px}
+.ev time{flex:0 0 46px;font-variant-numeric:tabular-nums;font-weight:650;color:var(--acc2);font-size:13.5px;padding-top:1px}
+.ev p{margin:0;font-size:14.5px}
+.ev small{display:block;color:var(--dim);font-size:12.5px;margin-top:3px;line-height:1.45}
+.badge{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:1px}
+.b-star{background:rgba(255,168,200,.18);color:var(--pink);border:1px solid rgba(255,168,200,.35)}
+.b-warn{background:rgba(255,207,125,.16);color:var(--warm);border:1px solid rgba(255,207,125,.3)}
+.b-move{background:rgba(124,196,255,.15);color:var(--acc);border:1px solid rgba(124,196,255,.3)}
+
+/* ---------- expenses ---------- */
+.tabs{display:flex;gap:6px;background:rgba(0,0,0,.28);padding:5px;border-radius:14px;border:1px solid var(--line);margin-bottom:14px}
+.tabs button{flex:1;background:none;border:0;padding:9px 6px;border-radius:10px;color:var(--dim);font-weight:620;font-size:13.5px;cursor:pointer;transition:.15s}
+.tabs button.on{background:var(--card2);color:var(--txt)}
+.tot{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.tot div{background:rgba(0,0,0,.26);border:1px solid var(--line);border-radius:14px;padding:13px}
+.tot b{display:block;font-size:22px;font-variant-numeric:tabular-nums;letter-spacing:-.02em;margin-top:2px}
+label{display:block;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim2);font-weight:650;margin:0 0 5px}
+input,select,textarea{width:100%;background:rgba(0,0,0,.34);border:1px solid var(--line);border-radius:12px;padding:11px 12px;outline:0}
+input:focus,select:focus,textarea:focus{border-color:var(--acc)}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),linear-gradient(135deg,var(--dim) 50%,transparent 50%);background-position:calc(100% - 17px) 50%,calc(100% - 12px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{background:linear-gradient(135deg,var(--acc),#5aa8ea);color:#06121f;border:0;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer;width:100%;transition:.15s}
+.btn:active{transform:scale(.985)}
+.btn.gh{background:var(--card2);color:var(--txt);border:1px solid var(--line);font-weight:620}
+.btn.sm{width:auto;padding:9px 14px;font-size:13.5px}
+.exp{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.exp .ic{flex:0 0 36px;height:36px;border-radius:11px;background:rgba(0,0,0,.3);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:17px}
+.exp .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:650;white-space:nowrap}
+.exp .v small{display:block;font-weight:400;color:var(--dim2);font-size:11.5px}
+.del{background:none;border:0;color:var(--dim2);cursor:pointer;padding:2px 5px;font-size:17px;line-height:1}
+.bar{height:7px;border-radius:99px;background:rgba(0,0,0,.35);overflow:hidden;margin-top:7px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--pink));transition:width .3s}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.quick button{background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:13px;padding:11px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;transition:.13s}
+.quick button:active{transform:scale(.94);border-color:var(--acc)}
+.quick button b{font-size:19px;line-height:1.1}
+.quick button span{font-size:11.5px;color:var(--dim);font-weight:600}
+.quick button i{font-style:normal;font-size:11px;color:var(--dim2);font-variant-numeric:tabular-nums}
+.bagrow{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.bagrow:last-child{border-bottom:0}
+input.kg{width:96px;flex:0 0 96px;text-align:right;padding:9px 11px;font-weight:650;font-variant-numeric:tabular-nums}
+.catrow{display:flex;justify-content:space-between;font-size:13px;padding:7px 0 2px}
+.sync{font-size:11.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line)}
+.sync.ok{color:var(--good);border-color:rgba(111,227,176,.35);background:rgba(111,227,176,.1)}
+.sync.off{color:var(--dim2)}
+.sync.err{color:var(--bad);border-color:rgba(255,138,138,.35);background:rgba(255,138,138,.1)}
+
+/* ---------- misc ---------- */
+.conv-out{font-size:35px;font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin:6px 0 2px}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);cursor:pointer}
+.chk:last-child{border-bottom:0}
+.box{flex:0 0 22px;height:22px;border-radius:7px;border:1.6px solid var(--dim2);display:flex;align-items:center;justify-content:center;margin-top:1px;transition:.15s}
+.chk.done .box{background:var(--good);border-color:var(--good);color:#06121f}
+.chk.done .ctxt{text-decoration:line-through;color:var(--dim2)}
+.due{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(255,207,125,.15);color:var(--warm);white-space:nowrap}
+.due.now{background:rgba(255,138,138,.16);color:var(--bad)}
+.due.ok{background:rgba(111,227,176,.14);color:var(--good)}
+.ph{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.ph:last-child{border-bottom:0}
+.ph b{font-size:15px}.ph i{color:var(--acc2);font-style:normal;font-size:13px}
+.ph span{display:block;color:var(--dim);font-size:13px}
+.em{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.em:last-child{border-bottom:0}
+.copy{background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:9px;padding:5px 10px;font-size:12px;color:var(--dim);cursor:pointer}
+footer{text-align:center;color:var(--dim2);font-size:12px;padding:28px 0 10px}
+.toast{position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:96px;background:#1b2942;border:1px solid var(--line);padding:11px 18px;border-radius:14px;font-size:13.5px;box-shadow:var(--sh);opacity:0;pointer-events:none;transition:.25s;z-index:99;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+details.cfg summary{cursor:pointer;color:var(--dim);font-size:13px;padding:6px 0;list-style:none}
+details.cfg summary::-webkit-details-marker{display:none}
+@media(max-width:400px){.cd b{font-size:24px}.up-title{font-size:21px}header h1{font-size:23px}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">01 — 14 fevereiro 2027</div>
+    <h1>Bélgica · Suíça · Itália</h1>
+    <div class="sub">Guilherme &amp; Brenda · Deise &amp; Luciano</div>
+  </header>
+
+  <!-- ================= HOJE ================= -->
+  <section id="s-home" class="on">
+    <div class="hero">
+      <div id="heroTop"></div>
+      <div class="chips" id="heroChips"></div>
+    </div>
+
+    <div class="card" style="margin-bottom:12px">
+      <div class="tiny">Onde dormimos</div>
+      <div id="stayNow" style="margin-top:7px"></div>
+    </div>
+
+    <div class="card" style="margin-bottom:12px">
+      <div class="row between"><div class="tiny">Progresso da viagem</div><div class="small muted" id="progTxt"></div></div>
+      <div class="bar" style="margin-top:10px"><i id="progBar" style="width:0%"></i></div>
+      <div class="row between small muted" style="margin-top:7px"><span>01 fev</span><span>14 fev</span></div>
+    </div>
+
+    <div class="card">
+      <div class="tiny">Resumo</div>
+      <div class="row wrapf" style="margin-top:10px;gap:8px">
+        <span class="chip">6 cidades-base</span><span class="chip">13 dias</span>
+        <span class="chip">4 viajantes</span><span class="chip">2 trens panorâmicos</span>
+        <span class="chip">1 pedido de casamento 💍</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ROTEIRO ================= -->
+  <section id="s-trip">
+    <div class="sec-h row between">
+      <h2>Roteiro</h2>
+      <button class="copy" onclick="toggleAll()">Abrir tudo</button>
+    </div>
+    <div id="days"></div>
+  </section>
+
+  <!-- ================= GASTOS ================= -->
+  <section id="s-money">
+    <div class="sec-h row between">
+      <h2>Gastos</h2>
+      <span class="sync off" id="syncBadge">local</span>
+    </div>
+
+    <div class="tabs">
+      <button class="on" data-w="gb" onclick="setWallet('gb')">Gui &amp; Brenda</button>
+      <button data-w="pais" onclick="setWallet('pais')">Pais</button>
+      <button data-w="all" onclick="setWallet('all')">Tudo</button>
+    </div>
+
+    <div class="tot">
+      <div><span class="tiny">Total em reais</span><b id="totBRL">R$ 0</b></div>
+      <div><span class="tiny">Média por dia</span><b id="totDia">R$ 0</b></div>
+    </div>
+
+    <div class="card" style="margin-bottom:12px">
+      <div class="tiny" style="margin-bottom:11px">Gasto rápido · um toque</div>
+      <div class="quick" id="quickBtns"></div>
+    </div>
+
+    <div class="card" style="margin-bottom:12px">
+      <div class="tiny" style="margin-bottom:10px">Novo gasto</div>
+      <div class="f2" style="margin-bottom:10px">
+        <div><label>Valor</label><input id="eVal" type="number" inputmode="decimal" step="0.01" placeholder="0,00"></div>
+        <div><label>Moeda</label><select id="eCur"><option value="CHF">CHF</option><option value="EUR">EUR</option><option value="BRL">BRL</option></select></div>
+      </div>
+      <div class="f2" style="margin-bottom:10px">
+        <div><label>Categoria</label><select id="eCat"></select></div>
+        <div><label>Data</label><input id="eDate" type="date"></div>
+      </div>
+      <div style="margin-bottom:12px"><label>Descrição</label><input id="eDesc" placeholder="Almoço em Lucerna"></div>
+      <div id="whoWrap" style="margin-bottom:12px" class="hide"><label>Carteira</label><select id="eWho"><option value="gb">Gui &amp; Brenda</option><option value="pais">Pais</option></select></div>
+      <button class="btn" onclick="addExp()">Adicionar gasto</button>
+    </div>
+
+    <div class="card" style="margin-bottom:12px">
+      <div class="tiny">Por categoria</div>
+      <div id="byCat" style="margin-top:8px"></div>
+    </div>
+
+    <div class="card" style="margin-bottom:12px">
+      <div class="row between" style="margin-bottom:6px"><div class="tiny">Lançamentos</div><span class="small muted" id="expCount"></span></div>
+      <div id="expList"></div>
+    </div>
+
+    <div class="card" style="margin-bottom:12px">
+      <div class="row between"><div class="tiny">🧳 Peso das bagagens</div><span class="small muted">23 kg por pessoa</span></div>
+      <div id="bagRows" style="margin-top:6px"></div>
+      <div style="margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.1)">
+        <div class="row between small"><span class="muted">Total do grupo</span><b id="bagAllTxt"></b></div>
+        <div class="bar" style="margin-top:7px"><i id="bagAllBar" style="width:0%"></i></div>
+        <p class="small muted" style="margin:11px 0 0" id="bagTip"></p>
+      </div>
+    </div>
+
+    <div class="row" style="gap:8px;margin-bottom:12px">
+      <button class="btn gh sm grow" onclick="shareSummary()">Resumo p/ WhatsApp</button>
+      <button class="btn gh sm grow" onclick="exportJSON()">Exportar</button>
+      <button class="btn gh sm grow" onclick="syncNow()">Sincronizar</button>
+    </div>
+
+    <details class="cfg card">
+      <summary>⚙️ Configurar planilha compartilhada</summary>
+      <p class="small muted" style="margin:10px 0">Cole aqui a URL do app da planilha (Apps Script). Depois de salvar, todos os aparelhos com essa mesma URL passam a ver os mesmos gastos.</p>
+      <input id="cfgUrl" placeholder="https://script.google.com/macros/s/..../exec" style="margin-bottom:10px">
+      <button class="btn gh" onclick="saveCfg()">Salvar e sincronizar</button>
+      <p class="small muted" style="margin:12px 0 0">Sem URL configurada, os gastos ficam salvos só neste aparelho — e continuam funcionando offline.</p>
+    </details>
+  </section>
+
+  <!-- ================= CONVERSOR ================= -->
+  <section id="s-conv">
+    <div class="sec-h"><h2>Conversor</h2></div>
+    <div class="hero" style="margin-top:0">
+      <label>Valor</label>
+      <input id="cIn" type="number" inputmode="decimal" placeholder="0,00" oninput="conv()" style="font-size:26px;font-weight:650;padding:14px">
+      <div class="tabs" style="margin-top:12px">
+        <button class="on" data-c="CHF" onclick="setCur('CHF')">CHF</button>
+        <button data-c="EUR" onclick="setCur('EUR')">EUR</button>
+        <button data-c="BRL" onclick="setCur('BRL')">BRL</button>
+      </div>
+      <div style="margin-top:16px">
+        <div class="tiny">Equivale a</div>
+        <div class="conv-out" id="cOut1">R$ 0,00</div>
+        <div class="muted" id="cOut2"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <div class="row between"><div class="tiny">Cotações</div><button class="copy" onclick="fetchRates()">Atualizar</button></div>
+      <div class="f2" style="margin-top:12px">
+        <div><label>1 CHF = R$</label><input id="rCHF" type="number" step="0.01" oninput="saveRates()"></div>
+        <div><label>1 EUR = R$</label><input id="rEUR" type="number" step="0.01" oninput="saveRates()"></div>
+      </div>
+      <p class="small muted" style="margin:12px 0 0" id="rateInfo"></p>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <div class="tiny">Referências rápidas</div>
+      <div id="refPrices" style="margin-top:8px"></div>
+    </div>
+  </section>
+
+  <!-- ================= CHECKLIST ================= -->
+  <section id="s-chk">
+    <div class="sec-h row between">
+      <h2>Checklist</h2>
+      <span class="small muted" id="chkCount"></span>
+    </div>
+    <div class="bar" style="margin-bottom:14px"><i id="chkBar" style="width:0%"></i></div>
+    <div class="card" id="chkList"></div>
+  </section>
+
+  <!-- ================= EMERGÊNCIA ================= -->
+  <section id="s-sos">
+    <div class="sec-h"><h2>Documentos &amp; emergência</h2></div>
+    <p class="small muted" style="margin:0 0 14px">Esta página funciona offline depois da primeira visita — abra uma vez com internet antes de viajar.</p>
+    <div id="sosOut"></div>
+  </section>
+
+  <!-- ================= FRASES ================= -->
+  <section id="s-lang">
+    <div class="sec-h"><h2>Frases úteis</h2></div>
+    <div class="tabs">
+      <button class="on" data-l="de" onclick="setLang('de')">🇩🇪 Alemão</button>
+      <button data-l="fr" onclick="setLang('fr')">🇫🇷 Francês</button>
+      <button data-l="it" onclick="setLang('it')">🇮🇹 Italiano</button>
+    </div>
+    <p class="small muted" id="langNote" style="margin:0 0 12px"></p>
+    <div class="card" id="phrases"></div>
+  </section>
+
+  <footer>Feito para a viagem de fevereiro de 2027 🏔️</footer>
+</div>
+
+<nav><div class="navin">
+  <button class="on" data-s="home" onclick="go('home')"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Hoje</button>
+  <button data-s="trip" onclick="go('trip')"><svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 9h18"/><rect x="3" y="5" width="18" height="16" rx="2"/></svg>Roteiro</button>
+  <button data-s="money" onclick="go('money')"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20M6 15.5h3"/></svg>Gastos</button>
+  <button data-s="conv" onclick="go('conv')"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>Câmbio</button>
+  <button data-s="chk" onclick="go('chk')"><svg viewBox="0 0 24 24"><path d="M4 7l2.5 2.5L11 5M4 17l2.5 2.5L11 15M14 8h6M14 18h6"/></svg>Lista</button>
+  <button data-s="sos" onclick="go('sos')"><svg viewBox="0 0 24 24"><path d="M12 3l8 3.5v5c0 4.6-3.2 8.2-8 9.5-4.8-1.3-8-4.9-8-9.5v-5z"/><path d="M12 9v4M12 16h.01"/></svg>SOS</button>
+</div></nav>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* =========================================================
+   1. DADOS DA VIAGEM
+   ========================================================= */
+const TZ_BR='-03:00', TZ_EU='+01:00';
+const TRIP_START='2027-02-01T07:30:00-03:00';
+const TRIP_END  ='2027-02-14T10:15:00-03:00';
+
+const DAYS=[
+{d:'2027-02-01',dow:'seg',city:'Embarque',ttl:'Navegantes → Madri',sub:'Dia de voo',stay:'Em voo',tz:TZ_BR,ev:[
+  {t:'07:30',x:'Sair de casa para o aeroporto',n:'Estar em Navegantes às 08:50 — 2h antes.'},
+  {t:'10:50',x:'Voo Gol 1225 · NVT → GRU',b:'move'},
+  {t:'12:10',x:'Chegada em Guarulhos',n:'Almoçar no aeroporto. Conexão no mesmo Terminal 2.'},
+  {t:'15:05',x:'Air Europa 58 · GRU → Madri',b:'move',n:'Aliança na bagagem de mão, nunca despachada.'}]},
+
+{d:'2027-02-02',dow:'ter',city:'Bruxelas',ttl:'Chegada em Bruxelas',sub:'Dia leve, de propósito',stay:'Ibis Brussels City Centre · Rue Joseph Plateau 2',tz:TZ_EU,ev:[
+  {t:'05:15',x:'Pouso em Madri',b:'warn',n:'Imigração e biometria EES aqui. Conexão de só 2h05 — ir direto ao portão.'},
+  {t:'07:20',x:'Air Europa 1171 · Madri → Bruxelas',b:'move'},
+  {t:'09:50',x:'Chegada em Bruxelas',n:'Trem do aeroporto até Bruxelas-Central: 20 min, 4 por hora.'},
+  {t:'11:00',x:'Deixar as malas no hotel',n:'Check-in oficial só às 15:00, mas guardam a bagagem.'},
+  {t:'11:30',x:'Grand-Place',n:'Prefeitura e casas das guildas. Manneken Pis a 4 min de caminhada.'},
+  {t:'12:30',x:'Almoço · moules-frites',n:'Fugir da Rue des Bouchers — armadilha turística cara.'},
+  {t:'14:00',x:'Galeries Royales Saint-Hubert',n:'Arquitetura e as chocolaterias. A Neuhaus nasceu aqui. Primeiro waffle.'},
+  {t:'15:00',x:'Catedral de São Miguel e Santa Gudula'},
+  {t:'16:00',x:'Mont des Arts',n:'Vista da cidade antes de escurecer — sol se põe 17:35.'},
+  {t:'17:30',x:'Check-in e jantar cedo',n:'Dormir cedo: o jet lag cobra no dia seguinte.'}]},
+
+{d:'2027-02-03',dow:'qua',city:'Bruxelas',ttl:'Bruges',sub:'Bate-volta de dia inteiro',stay:'Ibis Brussels City Centre',tz:TZ_EU,ev:[
+  {t:'07:45',x:'Sair do hotel → trem das 08:00',n:'Bruxelas-Central → Brugge, ~1h05. Pedir bilhete de ida e volta no mesmo dia.'},
+  {t:'09:20',x:'Markt',n:'A praça principal e as fachadas coloridas.'},
+  {t:'09:45',x:'Campanário de Bruges',b:'warn',n:'366 degraus, entrada por horário, ingresso online. Enche depois das 11h.'},
+  {t:'11:00',x:'Burg + Basílica do Sangue Sagrado',n:'Atenção: a basílica fecha na hora do almoço.'},
+  {t:'12:00',x:'Rozenhoedkaai',n:'A foto clássica de Bruges. Praça dos Curtidores ao lado.'},
+  {t:'12:30',x:'Almoço',n:'As ruas a oeste do Markt têm preço bem melhor que a praça.'},
+  {t:'14:00',x:'Igreja de Nossa Senhora',n:'A Madona de Bruges, de Michelangelo — a única escultura dele que saiu da Itália em vida.'},
+  {t:'15:00',x:'Beguinário e Minnewater',n:'Patrimônio UNESCO, silencioso. O lago do amor ao lado.'},
+  {t:'16:00',x:'Cervejaria De Halve Maan',n:'Visita guiada com terraço panorâmico. Reservar online.'},
+  {t:'17:15',x:'Rozenhoedkaai com as luzes',b:'star',n:'Bruges no escuro de inverno é melhor que de dia. Plano de reserva para o pedido.'},
+  {t:'18:15',x:'Compras e trem de volta',n:'Chocolate artesanal e renda. Chegada em Bruxelas ~20:00.'}]},
+
+{d:'2027-02-04',dow:'qui',city:'Bruxelas',ttl:'Bruxelas completa',sub:'Dia das compras',stay:'Ibis Brussels City Centre',tz:TZ_EU,ev:[
+  {t:'09:00',x:'Place du Grand Sablon',n:'A praça mais elegante da cidade. Pierre Marcolini, Wittamer e Neuhaus. Notre-Dame du Sablon ao lado.'},
+  {t:'10:30',x:'Palácio da Justiça e mirante Poelaert',n:'Vista aberta da cidade baixa.'},
+  {t:'11:15',x:'Palácio Real (externo) e Parque de Bruxelas',n:'Interior só abre ao público no verão.'},
+  {t:'12:30',x:'Almoço'},
+  {t:'14:00',x:'Atomium e Parque do Cinquentenário',n:'Metrô linha 6 até Heysel, ~30 min. Se o grupo cansar, cortar sem culpa: é o passeio mais caro e deslocado.'},
+  {t:'16:30',x:'Jeanneke Pis e Delirium Café',n:'Mais de 2.000 cervejas na carta.'},
+  {t:'18:30',x:'Compras finais e jantar',b:'warn',n:'Arrumar as malas hoje — amanhã o voo é às 10:05. Chocolate e cerveja saem muito mais baratos aqui que na Suíça.'}]},
+
+{d:'2027-02-05',dow:'sex',city:'Zurique',ttl:'Zurique e a fábrica da Lindt',sub:'Voo Bruxelas → Zurique',stay:'Ibis Styles Zurich City Center · Stampfenbachstrasse 60',tz:TZ_EU,ev:[
+  {t:'07:00',x:'Sair do hotel para o aeroporto',n:'Trem 20 min. Estar no BRU às 08:00.'},
+  {t:'10:05',x:'Swiss 4555 · Bruxelas → Zurique',b:'move'},
+  {t:'11:25',x:'Chegada em Zurique',n:'Trem do aeroporto até a Zurique HB: 10 min (S2/S16).'},
+  {t:'12:15',x:'Hotel e almoço rápido',n:'Dica que vale para toda a Suíça: Coop e Migros nas estações vendem sanduíche bom por CHF 8–14, contra CHF 30+ de restaurante.'},
+  {t:'13:30',x:'Lindt Home of Chocolate',b:'star',n:'Trem S8 ou S24 até Kilchberg (10 min) + 10 min a pé. Zona 150, não 110. A maior fonte de chocolate do mundo, museu, degustação à vontade e a maior loja Lindt do planeta. Reservar 2h30.'},
+  {t:'16:30',x:'Fraumünster e Grossmünster',n:'Os vitrais de Chagall na Fraumünster são o destaque real. St. Peter tem o maior mostrador de relógio de igreja da Europa.'},
+  {t:'17:15',x:'Lindenhof e Altstadt',n:'O mirante sobre o Limmat e as ruas medievais.'},
+  {t:'18:30',x:'Bahnhofstrasse iluminada e jantar',n:'Fondue ou raclette no Niederdorf.'}]},
+
+{d:'2027-02-06',dow:'sáb',city:'Zurique',ttl:'Lucerna e o Monte Rigi',sub:'Bate-volta',stay:'Ibis Styles Zurich City Center',tz:TZ_EU,ev:[
+  {t:'08:00',x:'Trem para Lucerna',b:'move',n:'45 min a 1h, 2 por hora. Chegada 08:50.'},
+  {t:'09:00',x:'Kapellbrücke e a Torre d\'Água',n:'A ponte de madeira coberta mais antiga da Europa, com painéis pintados no teto.'},
+  {t:'09:30',x:'Igreja dos Jesuítas e Altstadt',n:'A primeira igreja barroca da Suíça. Depois a Spreuerbrücke, mais tranquila.'},
+  {t:'10:30',x:'Muralha Musegg e Monumento do Leão',n:'Torres fechadas no inverno, mas a caminhada externa vale. Mark Twain chamou o leão de "a pedra mais triste e comovente do mundo".'},
+  {t:'11:45',x:'Almoço no centro'},
+  {t:'13:00',x:'Monte Rigi',b:'star',n:'Trem até Arth-Goldau (30 min) + cremalheira (35 min). Vista de 360° sobre 13 lagos. Roda o ano todo e é grátis com o Swiss Travel Pass. Substitui o Pilatus, cuja cremalheira fecha no inverno.'},
+  {t:'16:00',x:'Descer antes de escurecer',n:'Plano B se o tempo fechar: Museu Suíço dos Transportes ou Coleção Rosengart (Picasso e Klee).'},
+  {t:'18:30',x:'Volta a Zurique e jantar'}]},
+
+{d:'2027-02-07',dow:'dom',city:'Interlaken',ttl:'Zurique → Interlaken',sub:'Lauterbrunnen à tarde',stay:'Hotel Bernerhof · Bahnhofstrasse 16, Interlaken',tz:TZ_EU,ev:[
+  {t:'09:30',x:'Check-out e trem para Interlaken',b:'move',n:'~2h via Bern, 1 por hora.'},
+  {t:'12:00',x:'Chegada · Hotel Bernerhof',b:'warn',n:'Desembarcar em Interlaken WEST, não em Ost — o hotel fica ao lado da estação West.'},
+  {t:'14:00',x:'Lauterbrunnen',n:'20 min de trem de Interlaken Ost. O vale das 72 cachoeiras entre paredões de 400 m. No inverno a Staubbachfall aparece parcialmente congelada.'},
+  {t:'16:15',x:'Höheweg e Höhematte',n:'O gramado com vista para Jungfrau, Eiger e Mönch.'},
+  {t:'18:00',x:'Check-in e jantar',b:'warn',n:'Checar as webcams da jungfrau.ch e a previsão — a decisão de amanhã depende disso.'}]},
+
+{d:'2027-02-08',dow:'seg',city:'Interlaken',ttl:'Jungfraujoch · Top of Europe',sub:'Só com céu limpo',stay:'Hotel Bernerhof, Interlaken',tz:TZ_EU,ev:[
+  {t:'07:30',x:'Interlaken Ost → Grindelwald → Eiger Express',b:'move',n:'Gôndola de 15 min até Eigergletscher, depois trem até o topo.'},
+  {t:'09:45',x:'Jungfraujoch · 3.454 m',b:'star',n:'Mirante Sphinx, Palácio de Gelo, Plateau na neve e a geleira Aletsch, a maior dos Alpes. Reservar 2h30–3h. Vai fazer -15 a -20 °C com vento: luva, gorro e óculos de sol são obrigatórios.'},
+  {t:'13:00',x:'Descer pelo outro caminho',n:'Kleine Scheidegg → Wengen → Lauterbrunnen. Paisagem completamente diferente da subida, mesmo bilhete.'},
+  {t:'16:00',x:'Volta a Interlaken',n:'É o passeio mais caro da viagem (~CHF 160/pessoa com passe). Num dia nublado, você paga isso para ver névoa — nesse caso troque com o dia 09.'}]},
+
+{d:'2027-02-09',dow:'ter',city:'Interlaken',ttl:'Grindelwald-First',sub:'Dia reserva contra mau tempo',stay:'Hotel Bernerhof, Interlaken',tz:TZ_EU,ev:[
+  {t:'08:30',x:'Interlaken → Grindelwald → teleférico First',b:'move'},
+  {t:'10:00',x:'First Cliff Walk',n:'Passarela suspensa no paredão com vista para o Eiger. No inverno o forte daqui é o trenó de First até Bort: 3 km de descida, barato e divertidíssimo.'},
+  {t:'13:00',x:'Almoço em Grindelwald',n:'Vila alpina clássica.'},
+  {t:'15:00',x:'Volta',n:'Alternativas para hoje: Schilthorn/Mürren (vista frontal do trio Eiger–Mönch–Jungfrau, cenário de 007) ou Bern, a 50 min de trem.'},
+  {t:'18:00',x:'Arrumar as malas',b:'warn',n:'Os três próximos dias são de mudança diária com trem cedo.'}]},
+
+{d:'2027-02-10',dow:'qua',city:'Zermatt',ttl:'Zermatt e o Gornergrat',sub:'O dia do Matterhorn 💍',stay:'Hotel Adonis · Luchernstrasse 31, Zermatt',tz:TZ_EU,ev:[
+  {t:'08:30',x:'Interlaken → Spiez → Visp → Zermatt',b:'move',n:'~2h10, 1 por hora. Zermatt não tem carros: chega-se só de trem.'},
+  {t:'10:45',x:'Hotel Adonis · deixar malas',n:'Almoço leve.'},
+  {t:'12:00',x:'Gornergrat · 3.089 m',b:'star',n:'33 min de cremalheira, saídas a cada 24 min. O Matterhorn de frente, a geleira de Gorner e 29 picos acima de 4.000 m. Sentar do lado DIREITO na subida. 50% de desconto com o Swiss Travel Pass.'},
+  {t:'15:00',x:'Descida e vila de Zermatt',n:'Bahnhofstrasse, a igreja e o cemitério dos alpinistas — as lápides de quem morreu tentando o Matterhorn.'},
+  {t:'17:00',x:'Kirchbrücke ao anoitecer',b:'star',n:'A ponte sobre o rio com o Matterhorn ao fundo e o vilarejo iluminado. Este é o único momento da viagem com o Matterhorn de perto — o Glacier Express sai às 08:52 amanhã.'},
+  {t:'19:00',x:'Jantar em Zermatt'}]},
+
+{d:'2027-02-11',dow:'qui',city:'St. Moritz',ttl:'Glacier Express',sub:'7h45 de trem panorâmico',stay:'Hotel Piz · Via dal Bagn 6, St. Moritz',tz:TZ_EU,ev:[
+  {t:'08:00',x:'Check-out e café',n:'Comprar água e comida ANTES de embarcar: o almoço a bordo custa ~CHF 47/pessoa e levar o próprio é totalmente aceito.'},
+  {t:'08:52',x:'Partida do Glacier Express',b:'star',n:'O "trem express mais lento do mundo": 291 km, 291 pontes, 91 túneis. Reserva de assento obrigatória, inclusive com passe.'},
+  {t:'11:30',x:'Oberalp Pass · 2.033 m',n:'No caminho ainda: Andermatt, o desfiladeiro do Reno (o Grand Canyon suíço) e Chur, a cidade mais antiga da Suíça.'},
+  {t:'16:37',x:'Chegada em St. Moritz',b:'warn',n:'Hotel Piz a ~10 min. Atenção: a recepção fecha às 23h.'},
+  {t:'18:00',x:'Lago congelado e jantar',n:'St. Moritz é caríssima — jantar simples ou compras no Coop resolve bem. É no lago congelado que acontecem o polo e as corridas de cavalo na neve.'}]},
+
+{d:'2027-02-12',dow:'sex',city:'Milão',ttl:'Bernina Express → Milão',sub:'Patrimônio UNESCO',stay:'NYX Milan by Leonardo · Piazza IV Novembre 3',tz:TZ_EU,ev:[
+  {t:'08:00',x:'Manhã livre em St. Moritz',n:'Lago congelado, Via Serlas, café. Check-out.'},
+  {t:'10:06',x:'Bernina Express · St. Moritz → Tirano',b:'star',n:'No inverno só roda sexta, sábado e domingo — e hoje é sexta. Ospizio Bernina a 2.253 m entre lagos congelados, a geleira Morteratsch e o viaduto helicoidal de Brusio, onde o trem dá uma volta completa sobre si mesmo.'},
+  {t:'12:35',x:'Chegada em Tirano · almoço',n:'Já é Itália: o preço cai pela metade em relação à Suíça.'},
+  {t:'13:20',x:'Trenord · Tirano → Milano Centrale',b:'move',n:'2h30 direto, saídas a cada hora.'},
+  {t:'15:50',x:'Chegada em Milão · NYX Hotel',n:'Colado na estação Centrale. Taxa de cidade de EUR 20 por quarto na chegada.'},
+  {t:'17:00',x:'Duomo e Galleria Vittorio Emanuele II',n:'Metrô M3, 3 paradas. Fachada iluminada e a Piazza della Scala.'},
+  {t:'19:30',x:'Jantar na Osteria da Fortunata',b:'star',n:'Unidade Brera, 15 min a pé do Duomo, aberta até 1h. Massa fresca feita à mão na vitrine. Pedir carbonara, cacio e pepe ou amatriciana. Não aceita reserva e enche.'},
+  {t:'21:30',x:'Brera à noite ou um drink nos Navigli'}]},
+
+{d:'2027-02-13',dow:'sáb',city:'Volta',ttl:'Milão e voo de volta',sub:'Último dia',stay:'Em voo',tz:TZ_EU,ev:[
+  {t:'08:30',x:'Duomo · terraços',b:'star',n:'Caminhar entre as agulhas de mármore é a melhor coisa de Milão. Ingresso online com horário, ~EUR 17 com elevador.'},
+  {t:'10:15',x:'Castello Sforzesco e Parco Sempione',n:'Só externo, 40 min.'},
+  {t:'11:15',x:'Compras de vinho',n:'Signorvino na própria Centrale (5 min do hotel) ou Peck perto do Duomo. Para economizar: Esselunga ou Carrefour. Vinho pesa ~1,3 kg por garrafa e vai despachado — são 23 kg por pessoa.'},
+  {t:'12:30',x:'Check-out e almoço',n:'Voucher marca 11:00 — pedir late check-out ou deixar malas na bagageira.'},
+  {t:'14:00',x:'Malpensa Express · Centrale → MXP T1',b:'move',n:'52 min, a cada 30 min. Tax Free: procurar o balcão em Malpensa ANTES do check-in.'},
+  {t:'18:20',x:'Air Europa 1062 · Milão → Madri',b:'move'},
+  {t:'23:55',x:'Air Europa 57 · Madri → São Paulo',b:'move'}]},
+
+{d:'2027-02-14',dow:'dom',city:'Casa',ttl:'Chegada em casa',sub:'Fim da viagem',stay:'Casa',tz:TZ_BR,ev:[
+  {t:'06:30',x:'Pouso em Guarulhos'},
+  {t:'09:05',x:'Gol 1224 · GRU → Navegantes',b:'move'},
+  {t:'10:15',x:'Chegada em Navegantes',b:'star',n:'Fim da viagem. 💍'}]}
+];
+
+const CATS=[['🍽️','Alimentação'],['🚆','Transporte'],['🎟️','Ingressos'],['🛍️','Compras'],['🏨','Hotel/taxas'],['☕','Café/lanche'],['🍷','Vinho'],['📦','Outros']];
+
+const CHECK=[
+ {id:'c1',t:'Conferir validade dos 4 passaportes',n:'Precisam valer até pelo menos ago/2027 — 6 meses após o retorno.',due:'2026-09-30',lbl:'Agora'},
+ {id:'c2',t:'Confirmar bagagem despachada NVT → Bruxelas',n:'A conexão em Madri é de só 2h05 com desembarque internacional. Ligar para a William Viagens.',due:'2026-09-30',lbl:'Agora'},
+ {id:'c3',t:'Reservar o Glacier Express (11/02)',n:'Reserva de assento obrigatória e esgota. Horários de 2027 abrem por volta de outubro/2026.',due:'2026-10-31',lbl:'Out/2026'},
+ {id:'c4',t:'Reservar o Bernina Express (12/02)',n:'No inverno só roda sex/sáb/dom. 12/02 é sexta — dá certo, mas precisa reserva.',due:'2026-11-15',lbl:'Nov/2026'},
+ {id:'c5',t:'Decidir Swiss Travel Pass × Half Fare Card',n:'Preços de 2027 saem por volta de nov/2026. A escolha certa economiza CHF 800–1.300 no grupo.',due:'2026-11-30',lbl:'Nov/2026'},
+ {id:'c6',t:'Comprar os trens entre cidades',n:'Zurique→Interlaken, Interlaken→Zermatt, St. Moritz→Tirano→Milão e os bate-voltas.',due:'2026-12-15',lbl:'Dez/2026'},
+ {id:'c7',t:'Ingresso do Lindt Home of Chocolate',n:'Hora marcada, esgota. CHF 17 por adulto.',due:'2026-12-20',lbl:'Dez/2026'},
+ {id:'c8',t:'Reconferir exigência de ETIAS',n:'Em ago/2026 estava adiado para 2027 e não era exigido. O EES (biometria) já vale desde 10/04/2026.',due:'2026-12-20',lbl:'Dez/2026'},
+ {id:'c9',t:'Campanário de Bruges e terraços do Duomo',n:'Ingresso online com horário.',due:'2027-01-15',lbl:'Jan/2027'},
+ {id:'c10',t:'Cervejaria De Halve Maan em Bruges',n:'Visita guiada, reservar online.',due:'2027-01-20',lbl:'Jan/2027'},
+ {id:'c11',t:'eSIM europeu para os 4',n:'Muito mais barato que roaming. Ativar antes de embarcar.',due:'2027-01-25',lbl:'Jan/2027'},
+ {id:'c12',t:'Avisar os bancos sobre a viagem',n:'Evita bloqueio do cartão na primeira compra na Europa.',due:'2027-01-28',lbl:'Jan/2027'},
+ {id:'c13',t:'Roupa de frio conferida',n:'Segunda pele, casaco impermeável, gorro, luvas, botas com sola aderente, óculos de sol.',due:'2027-01-28',lbl:'Jan/2027'},
+ {id:'c14',t:'Decidir sobre cancelar Zermatt/St. Moritz',n:'Último dia de cancelamento sem multa integral. Depois disso, 100% de multa.',due:'2027-02-03',lbl:'03/02'},
+ {id:'c15',t:'💍 Aliança na bagagem de mão',n:'Nunca despachada. Combinar antes com o Luciano ou a Deise para fotografar.',due:'2027-01-31',lbl:'Antes de sair'}
+];
+
+const SOS=[
+ {h:'✈️ Voos',r:[
+  ['01/02 · Gol 1225','NVT 10:50 → GRU 12:10'],
+  ['01/02 · Air Europa 58','GRU 15:05 (T2) → MAD 05:15'],
+  ['02/02 · Air Europa 1171','MAD 07:20 (T2) → BRU 09:50'],
+  ['05/02 · Swiss 4555','BRU 10:05 → ZRH 11:25 · 23 kg'],
+  ['13/02 · Air Europa 1062','MXP 18:20 (T1) → MAD 20:45'],
+  ['13/02 · Air Europa 57','MAD 23:55 (T1) → GRU 06:30'],
+  ['14/02 · Gol 1224','GRU 09:05 (T2) → NVT 10:15']]},
+ {h:'🏨 Hotéis',r:[
+  ['Ibis Brussels City Centre','Rue Joseph Plateau 2, 1000 Brussels · 02–05/02'],
+  ['Ibis Styles Zurich City Center','Stampfenbachstrasse 60, 8006 Zürich · 05–07/02'],
+  ['Hotel Bernerhof','Bahnhofstrasse 16, 3800 Interlaken · 07–10/02'],
+  ['Hotel Adonis','Luchernstrasse 31, 3920 Zermatt · 10–11/02'],
+  ['Hotel Piz','Via dal Bagn 6, 7500 St. Moritz · 11–12/02 · recepção até 23h'],
+  ['NYX Milan by Leonardo','Piazza IV Novembre 3, 20214 Milano · 12–13/02']]},
+ {h:'🆘 Emergência',r:[
+  ['Europa — número único','112'],
+  ['Suíça — ambulância','144'],
+  ['Suíça — polícia','117'],
+  ['Itália — carabinieri','112'],
+  ['Bélgica — polícia','101']]},
+ {h:'📋 Reservas e seguro',r:[
+  ['Assist Card','Plano 35 · válido 01 a 14/02 · médico EUR 35.000'],
+  ['Agência','William Viagens · (47) 99218-1882'],
+  ['E-mail da agência','viagens.william@gmail.com'],
+  ['Reserva aérea','ID 13492762'],
+  ['Reserva terrestre','ID 13490828']]},
+ {h:'🇧🇷 Consulados do Brasil',r:[
+  ['Bruxelas','Av. Louise 350 · +32 2 640 20 15'],
+  ['Berna (Suíça)','Monbijoustrasse 68 · +41 31 371 85 15'],
+  ['Zurique','Consulado-Geral · +41 43 500 06 30'],
+  ['Milão','Via Fatebenefratelli 20 · +39 02 8646 1252']]}
+];
+
+const PHRASES={
+ de:{note:'Zurique, Lucerna, Interlaken, Zermatt e boa parte de St. Moritz. Quase todo mundo fala inglês, mas cumprimentar em alemão abre portas.',
+ list:[['Grüezi','GRÜ-tsi','Olá (a saudação suíça, não "guten Tag")'],['Danke vielmal','DAN-ke FIL-mal','Muito obrigado (bem suíço)'],['Bitte','BI-te','Por favor / de nada'],['Entschuldigung','ent-SHUL-di-gung','Com licença / desculpa'],['Sprechen Sie Englisch?','SPRE-chen zi ENG-lish','Você fala inglês?'],['Die Rechnung, bitte','di RECH-nung BI-te','A conta, por favor'],['Wie viel kostet das?','vi fil KOS-tet das','Quanto custa?'],['Ein Tisch für vier','ain tish für fir','Uma mesa para quatro'],['Wo ist der Bahnhof?','vo ist der BAN-hof','Onde fica a estação?'],['Gleis','glais','Plataforma (nas placas de trem)'],['Ausgang','AUS-gang','Saída'],['Auf Wiedersehen','auf VI-der-zên','Até logo']]},
+ fr:{note:'Bruxelas e Bruges (em Bruges também se fala neerlandês, mas francês e inglês funcionam).',
+ list:[['Bonjour','bon-JUR','Bom dia / olá'],['Merci beaucoup','mer-SI bo-KU','Muito obrigado'],['S\'il vous plaît','sil vu PLÊ','Por favor'],['Excusez-moi','eks-kü-ZÊ mua','Com licença'],['Parlez-vous anglais?','par-lê VU an-GLÊ','Você fala inglês?'],['L\'addition, s\'il vous plaît','la-di-SION sil vu PLÊ','A conta, por favor'],['Combien ça coûte?','kom-BIÊN sa KUT','Quanto custa?'],['Une table pour quatre','ün TA-ble pur KA-tre','Uma mesa para quatro'],['Où est la gare?','u ê la GAR','Onde fica a estação?'],['Sortie','sor-TI','Saída'],['Au revoir','o re-VUÁR','Até logo']]},
+ it:{note:'Milão, Tirano e o trecho italiano do Bernina.',
+ list:[['Buongiorno','bon-DJOR-no','Bom dia'],['Grazie mille','GRA-tsie MI-le','Muito obrigado'],['Per favore','per fa-VO-re','Por favor'],['Scusi','SKU-zi','Com licença'],['Parla inglese?','PAR-la in-GLE-ze','Você fala inglês?'],['Il conto, per favore','il KON-to per fa-VO-re','A conta, por favor'],['Quanto costa?','KUAN-to KOS-ta','Quanto custa?'],['Un tavolo per quattro','un TA-vo-lo per KUA-tro','Uma mesa para quatro'],['Vorrei un vino rosso','vo-RÊI un VI-no RO-so','Queria um vinho tinto'],['Dov\'è la stazione?','do-VÊ la sta-TSIO-ne','Onde fica a estação?'],['Uscita','u-SHI-ta','Saída'],['Arrivederci','a-ri-ve-DER-tchi','Até logo']]}
+};
+
+const REFS=[['Sanduíche no Coop/Migros','CHF 10'],['Prato em restaurante suíço','CHF 32'],['Café expresso','CHF 4,50'],['Cerveja em Bruxelas','EUR 5'],['Waffle belga na rua','EUR 4'],['Gornergrat (com passe)','CHF 66'],['Jungfraujoch (com passe)','CHF 160'],['Lindt Home of Chocolate','CHF 17'],['Terraços do Duomo','EUR 17'],['Pizza/massa em Milão','EUR 14']];
+
+/* =========================================================
+   2. ESTADO
+   ========================================================= */
+const QUICK=[['☕','Café','CHF',4.50,'Café/lanche'],['🥪','Sanduíche','CHF',10,'Alimentação'],['🍽️','Almoço','CHF',20,'Alimentação'],
+             ['💧','Água','CHF',2,'Café/lanche'],['🚇','Metrô','EUR',2.20,'Transporte'],['🧇','Waffle','EUR',4,'Alimentação']];
+
+const LS={exp:'v27_exp',chk:'v27_chk',rates:'v27_rates',cfg:'v27_cfg',q:'v27_queue',bag:'v27_bag'};
+const g=id=>document.getElementById(id);
+const ls=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
+const ss=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+let EXP=ls(LS.exp,[]), CHKD=ls(LS.chk,{}), RATES=ls(LS.rates,{CHF:6.55,EUR:6.15,at:null}), CFG=ls(LS.cfg,{url:''}), QUEUE=ls(LS.q,[]);
+const PEOPLE=[['gui','Guilherme'],['bren','Brenda'],['deise','Deise'],['luciano','Luciano']];
+let BAG=ls(LS.bag,{gui:0,bren:0,deise:0,luciano:0});
+if(typeof BAG.gui!=='number')BAG={gui:0,bren:0,deise:0,luciano:0};
+let wallet='gb', curFrom='CHF', lang='de';
+
+function toast(m){const t=g('toast');t.textContent=m;t.classList.add('on');clearTimeout(t._x);t._x=setTimeout(()=>t.classList.remove('on'),2400)}
+function dt(day,time){return new Date(day.d+'T'+time+':00'+day.tz)}
+function fmtBRL(n){return 'R$ '+n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function fmtBRL0(n){return 'R$ '+n.toLocaleString('pt-BR',{maximumFractionDigits:0})}
+
+/* =========================================================
+   3. NAVEGAÇÃO
+   ========================================================= */
+function go(s){
+  document.querySelectorAll('section').forEach(x=>x.classList.remove('on'));
+  g('s-'+s).classList.add('on');
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.s===s));
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+/* =========================================================
+   4. HERO — contagem regressiva + up next
+   ========================================================= */
+function allEvents(){
+  const out=[];
+  DAYS.forEach((day,di)=>day.ev.forEach(e=>out.push({when:dt(day,e.t),day,di,...e})));
+  return out.sort((a,b)=>a.when-b.when);
+}
+const EVENTS=allEvents();
+
+function renderHero(){
+  const now=new Date(), start=new Date(TRIP_START), end=new Date(TRIP_END);
+  const top=g('heroTop'), chips=g('heroChips');
+
+  if(now<start){
+    const ms=start-now, d=Math.floor(ms/864e5), h=Math.floor(ms/36e5)%24, m=Math.floor(ms/6e4)%60, s=Math.floor(ms/1e3)%60;
+    top.innerHTML=
+      '<div class="upnext-lbl"><span class="dot"></span>Faltam</div>'+
+      '<div class="up-title" style="margin-bottom:2px">Para o embarque</div>'+
+      '<div class="muted small">Segunda, 1 de fevereiro de 2027 · 10:50 em Navegantes</div>'+
+      '<div class="cd"><div><b>'+d+'</b><span>dias</span></div><div><b>'+String(h).padStart(2,'0')+'</b><span>horas</span></div>'+
+      '<div><b>'+String(m).padStart(2,'0')+'</b><span>min</span></div><div><b>'+String(s).padStart(2,'0')+'</b><span>seg</span></div></div>';
+    const done=CHECK.filter(c=>CHKD[c.id]).length;
+    chips.innerHTML='<span class="chip">'+done+'/'+CHECK.length+' da checklist</span><span class="chip">'+EXP.length+' gastos registrados</span>';
+    g('stayNow').innerHTML='<div style="font-weight:620">Primeira noite: em voo</div><div class="small muted" style="margin-top:3px">Hotel Ibis Brussels City Centre a partir de 02/02.</div>';
+    g('progTxt').textContent='ainda não começou'; g('progBar').style.width='0%';
+    return;
+  }
+  if(now>end){
+    top.innerHTML='<div class="upnext-lbl">Viagem concluída</div><div class="up-title">Bem-vindos de volta 🏔️</div><div class="muted small">01 a 14 de fevereiro de 2027</div>';
+    chips.innerHTML='<span class="chip">'+EXP.length+' gastos registrados</span>';
+    g('stayNow').textContent='Casa.'; g('progTxt').textContent='100%'; g('progBar').style.width='100%';
+    return;
+  }
+
+  const next=EVENTS.find(e=>e.when>now);
+  const cur=[...EVENTS].reverse().find(e=>e.when<=now);
+  const today=DAYS.find(d=>d.d===new Date(now.getTime()+ (now.getTimezoneOffset()*6e4) + 36e5).toISOString().slice(0,10)) || (cur&&cur.day);
+
+  let h='';
+  if(next){
+    const mins=Math.round((next.when-now)/6e4);
+    const when = mins<60 ? 'em '+mins+' min' : (mins<600 ? 'em '+Math.floor(mins/60)+'h'+String(mins%60).padStart(2,'0') : 'amanhã às '+next.t);
+    const sameDay = cur && next.day.d===cur.day.d;
+    h+='<div class="upnext-lbl"><span class="dot"></span>Up next</div>'+
+       '<div class="up-title">'+next.x+'</div>'+
+       '<div class="up-when">'+next.t+' · '+when+(sameDay?'':' · '+next.day.dow+' '+next.day.d.slice(8)+'/'+next.day.d.slice(5,7))+'</div>'+
+       (next.n?'<div class="small muted" style="margin-top:8px">'+next.n+'</div>':'');
+  } else {
+    h+='<div class="upnext-lbl">Último item do dia</div><div class="up-title">Aproveitem 🏔️</div>';
+  }
+  if(cur){
+    h+='<div class="up-now"><div class="tiny">Agora</div><div style="font-weight:620;margin-top:3px">'+cur.x+'</div>'+
+       '<div class="small muted">desde '+cur.t+'</div></div>';
+  }
+  top.innerHTML=h;
+
+  const dd=today||DAYS[0];
+  chips.innerHTML='<span class="chip">Dia '+(DAYS.indexOf(dd)+1)+' de 14</span><span class="chip">📍 '+dd.city+'</span><span class="chip">'+dd.ttl+'</span>';
+  g('stayNow').innerHTML='<div style="font-weight:620">'+dd.stay+'</div>';
+  const p=Math.max(0,Math.min(100,(now-start)/(end-start)*100));
+  g('progBar').style.width=p+'%'; g('progTxt').textContent=Math.round(p)+'%';
+}
+
+/* =========================================================
+   5. ROTEIRO
+   ========================================================= */
+function renderDays(){
+  const now=new Date();
+  g('days').innerHTML=DAYS.map((d,i)=>{
+    const end=dt(d,'23:59'), isPast=now>end;
+    const isToday=now>=dt(d,'00:00')&&now<=end;
+    return '<div class="day'+(isPast?' past':'')+(isToday?' today open':'')+'" id="day'+i+'">'+
+      '<div class="dhead" onclick="document.getElementById(\'day'+i+'\').classList.toggle(\'open\')">'+
+        '<div class="dnum"><b>'+d.d.slice(8)+'</b><span>'+d.dow+'</span></div>'+
+        '<div class="grow"><div class="dttl">'+d.ttl+'</div><div class="dsub">📍 '+d.city+' · '+d.sub+'</div></div>'+
+        '<svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>'+
+      '</div>'+
+      '<div class="dbody">'+d.ev.map(e=>
+        '<div class="ev"><time>'+e.t+'</time><div class="grow"><p>'+e.x+
+        (e.b==='star'?'<span class="badge b-star">destaque</span>':e.b==='warn'?'<span class="badge b-warn">atenção</span>':e.b==='move'?'<span class="badge b-move">deslocamento</span>':'')+
+        '</p>'+(e.n?'<small>'+e.n+'</small>':'')+'</div></div>').join('')+
+      '<div class="small muted" style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08)">🛏️ '+d.stay+'</div></div></div>';
+  }).join('');
+}
+let allOpen=false;
+function toggleAll(){allOpen=!allOpen;document.querySelectorAll('.day').forEach(d=>d.classList.toggle('open',allOpen));event.target.textContent=allOpen?'Fechar tudo':'Abrir tudo'}
+
+/* =========================================================
+   6. GASTOS
+   ========================================================= */
+function setWallet(w){wallet=w;document.querySelectorAll('.tabs [data-w]').forEach(b=>b.classList.toggle('on',b.dataset.w===w));g('whoWrap').classList.toggle('hide',w!=='all');renderExp()}
+function toBRL(v,c){return c==='BRL'?v:v*(RATES[c]||1)}
+function walletOf(e){return e.w}
+
+function addExp(){
+  const v=parseFloat(g('eVal').value);
+  if(!v||v<=0){toast('Informe um valor');return}
+  const e={id:Date.now()+'-'+Math.random().toString(36).slice(2,7),
+    v:v, c:g('eCur').value, cat:g('eCat').value, d:g('eDate').value||new Date().toISOString().slice(0,10),
+    desc:g('eDesc').value.trim()||g('eCat').value, w: wallet==='all'?g('eWho').value:wallet, ts:Date.now()};
+  EXP.push(e); ss(LS.exp,EXP);
+  queuePush({op:'add',row:e});
+  g('eVal').value=''; g('eDesc').value='';
+  renderExp(); toast('Gasto adicionado'); flush();
+}
+function renderQuick(){
+  g('quickBtns').innerHTML=QUICK.map((q,i)=>
+    '<button onclick="quickAdd('+i+')"><b>'+q[0]+'</b><span>'+q[1]+'</span><i>'+q[2]+' '+q[3].toFixed(2)+'</i></button>').join('');
+}
+function quickAdd(i){
+  const q=QUICK[i];
+  const e={id:Date.now()+'-'+Math.random().toString(36).slice(2,7),
+    v:q[3], c:q[2], cat:q[4], d:new Date().toISOString().slice(0,10),
+    desc:q[1], w: wallet==='all'?g('eWho').value:wallet, ts:Date.now()};
+  EXP.push(e); ss(LS.exp,EXP); queuePush({op:'add',row:e});
+  renderExp(); toast(q[0]+' '+q[1]+' · '+q[2]+' '+q[3].toFixed(2)); flush();
+}
+
+/* ---- peso das bagagens, por pessoa ---- */
+const LIM=23;
+function kgTxt(n){return n.toFixed(1).replace('.',',')+' kg'}
+function saveBag(k,v){BAG[k]=Math.max(0,parseFloat(v)||0);ss(LS.bag,BAG);renderBag(true)}
+function renderBag(keepFocus){
+  const total=PEOPLE.reduce((s,[k])=>s+(BAG[k]||0),0), lim=LIM*PEOPLE.length;
+  if(!keepFocus){
+    g('bagRows').innerHTML=PEOPLE.map(([k,nome])=>{
+      const v=BAG[k]||0;
+      return '<div class="bagrow"><div class="row between" style="align-items:center">'+
+        '<div class="grow"><div style="font-weight:620;font-size:14.5px">'+nome+'</div>'+
+        '<div class="small" id="bg-l-'+k+'"></div></div>'+
+        '<input class="kg" id="bg-'+k+'" type="number" step="0.5" inputmode="decimal" value="'+v+'" oninput="saveBag(\''+k+'\',this.value)">'+
+        '</div><div class="bar" style="margin-top:6px"><i id="bg-b-'+k+'"></i></div></div>';
+    }).join('');
+  }
+  PEOPLE.forEach(([k,nome])=>{
+    const v=BAG[k]||0, over=v>LIM, near=v>LIM*.9;
+    const bar=g('bg-b-'+k), lab=g('bg-l-'+k);
+    bar.style.width=Math.min(100,v/LIM*100)+'%';
+    bar.style.background=over?'linear-gradient(90deg,#ff8a8a,#ff5f5f)':(near?'linear-gradient(90deg,var(--warm),#ff9d5c)':'linear-gradient(90deg,var(--acc),var(--pink))');
+    lab.textContent=over?'excesso de '+kgTxt(v-LIM):'folga de '+kgTxt(LIM-v);
+    lab.style.color=over?'var(--bad)':(near?'var(--warm)':'var(--dim2)');
+  });
+  const over=total>lim;
+  g('bagAllTxt').textContent=kgTxt(total)+' de '+lim+' kg';
+  g('bagAllTxt').style.color=over?'var(--bad)':'var(--txt)';
+  const ab=g('bagAllBar');
+  ab.style.width=Math.min(100,total/lim*100)+'%';
+  ab.style.background=over?'linear-gradient(90deg,#ff8a8a,#ff5f5f)':'linear-gradient(90deg,var(--acc),var(--pink))';
+
+  const cheios=PEOPLE.filter(([k])=>(BAG[k]||0)>LIM), folga=PEOPLE.filter(([k])=>(BAG[k]||0)<LIM-1);
+  let tip;
+  if(cheios.length&&folga.length){
+    tip='⚠️ '+cheios.map(p=>p[1]).join(' e ')+' passou dos 23 kg. Dá para remanejar até '+
+        kgTxt(folga.reduce((s,[k])=>s+(LIM-(BAG[k]||0)),0))+' para a mala de '+folga.map(p=>p[1]).join(', ')+'.';
+  } else if(cheios.length){
+    tip='⚠️ Excesso de bagagem em '+cheios.map(p=>p[1]).join(' e ')+' e ninguém do grupo tem folga. Excesso na Air Europa costuma custar bem caro no balcão.';
+  } else if(total===0){
+    tip='Pese as malas em casa antes de sair e vá atualizando aqui durante a viagem — a última pesagem que importa é a de Milão, com o vinho dentro.';
+  } else {
+    tip='✓ Todo mundo dentro da franquia. Vale repesar em Milão, depois das compras de vinho.';
+  }
+  g('bagTip').textContent=tip;
+}
+
+function delExp(id){
+  if(!confirm('Apagar este lançamento?'))return;
+  EXP=EXP.filter(e=>e.id!==id); ss(LS.exp,EXP);
+  queuePush({op:'del',id}); renderExp(); flush();
+}
+function renderExp(){
+  const list = wallet==='all'?EXP:EXP.filter(e=>e.w===wallet);
+  const tot = list.reduce((s,e)=>s+toBRL(e.v,e.c),0);
+  g('totBRL').textContent=fmtBRL0(tot);
+  const days=new Set(list.map(e=>e.d)).size||1;
+  g('totDia').textContent=fmtBRL0(tot/days);
+  g('expCount').textContent=list.length+' item'+(list.length===1?'':'s');
+
+  const by={};
+  list.forEach(e=>by[e.cat]=(by[e.cat]||0)+toBRL(e.v,e.c));
+  const max=Math.max(1,...Object.values(by));
+  g('byCat').innerHTML=Object.keys(by).length?Object.entries(by).sort((a,b)=>b[1]-a[1]).map(([k,v])=>{
+    const ic=(CATS.find(c=>c[1]===k)||['•'])[0];
+    return '<div><div class="catrow"><span>'+ic+' '+k+'</span><b>'+fmtBRL0(v)+'</b></div><div class="bar"><i style="width:'+(v/max*100)+'%"></i></div></div>';
+  }).join(''):'<p class="small muted" style="margin:4px 0 0">Nada registrado ainda.</p>';
+
+  g('expList').innerHTML=list.length?[...list].sort((a,b)=>b.ts-a.ts).map(e=>{
+    const ic=(CATS.find(c=>c[1]===e.cat)||['•'])[0];
+    const who=e.w==='gb'?'Gui &amp; Brenda':'Pais';
+    return '<div class="exp"><div class="ic">'+ic+'</div><div class="grow"><div style="font-weight:600;font-size:14.5px">'+e.desc+'</div>'+
+      '<div class="small muted">'+e.d.split('-').reverse().slice(0,2).join('/')+(wallet==='all'?' · '+who:'')+'</div></div>'+
+      '<div class="v">'+fmtBRL0(toBRL(e.v,e.c))+'<small>'+e.c+' '+e.v.toFixed(2)+'</small></div>'+
+      '<button class="del" onclick="delExp(\''+e.id+'\')">×</button></div>';
+  }).join(''):'<p class="small muted" style="margin:4px 0 0">Nenhum lançamento ainda. Adicione o primeiro acima.</p>';
+}
+function shareSummary(){
+  const mk=w=>{const l=EXP.filter(e=>e.w===w);return l.reduce((s,e)=>s+toBRL(e.v,e.c),0)};
+  const a=mk('gb'), b=mk('pais');
+  const txt='💰 Gastos da viagem\n\nGui & Brenda: '+fmtBRL0(a)+'\nPais: '+fmtBRL0(b)+'\nTotal: '+fmtBRL0(a+b)+'\n\n('+EXP.length+' lançamentos)';
+  if(navigator.share){navigator.share({text:txt}).catch(()=>{})}
+  else{navigator.clipboard.writeText(txt).then(()=>toast('Resumo copiado'))}
+}
+function exportJSON(){
+  const blob=new Blob([JSON.stringify(EXP,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='gastos-viagem-2027.json';a.click();
+  toast('Arquivo exportado');
+}
+
+/* ---- sincronização com a planilha ---- */
+function queuePush(op){QUEUE.push(op);ss(LS.q,QUEUE)}
+function badge(cls,txt){const b=g('syncBadge');b.className='sync '+cls;b.textContent=txt}
+function saveCfg(){
+  CFG.url=g('cfgUrl').value.trim(); ss(LS.cfg,CFG);
+  if(CFG.url){toast('Planilha configurada');syncNow()}else{badge('off','local');toast('Sincronização desligada')}
+}
+async function flush(){
+  if(!CFG.url||!QUEUE.length)return;
+  try{
+    await fetch(CFG.url,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({ops:QUEUE})});
+    QUEUE=[];ss(LS.q,QUEUE);badge('ok','sincronizado');
+  }catch(e){badge('err',QUEUE.length+' pendente(s)')}
+}
+async function syncNow(){
+  if(!CFG.url){toast('Configure a URL da planilha primeiro');return}
+  badge('off','sincronizando…');
+  await flush();
+  try{
+    const r=await fetch(CFG.url+'?action=list&t='+Date.now());
+    const j=await r.json();
+    if(Array.isArray(j.rows)){
+      const local=new Map(EXP.map(e=>[e.id,e]));
+      j.rows.forEach(r=>local.set(r.id,{...r,v:parseFloat(r.v),ts:parseInt(r.ts)||Date.now()}));
+      EXP=[...local.values()];ss(LS.exp,EXP);renderExp();
+    }
+    badge('ok','sincronizado');toast('Gastos atualizados');
+  }catch(e){badge('err','sem conexão');toast('Não consegui alcançar a planilha')}
+}
+
+/* =========================================================
+   7. CONVERSOR
+   ========================================================= */
+function setCur(c){curFrom=c;document.querySelectorAll('[data-c]').forEach(b=>b.classList.toggle('on',b.dataset.c===c));conv()}
+function conv(){
+  const v=parseFloat(g('cIn').value)||0;
+  const brl = curFrom==='BRL'?v:v*RATES[curFrom];
+  let o1,o2;
+  if(curFrom==='BRL'){o1=fmtBRL(v);o2='CHF '+(v/RATES.CHF).toFixed(2)+'  ·  EUR '+(v/RATES.EUR).toFixed(2)}
+  else{o1=fmtBRL(brl);const other=curFrom==='CHF'?'EUR':'CHF';o2=other+' '+(brl/RATES[other]).toFixed(2)}
+  g('cOut1').textContent=o1;g('cOut2').textContent=o2;
+}
+function saveRates(){
+  RATES.CHF=parseFloat(g('rCHF').value)||RATES.CHF;
+  RATES.EUR=parseFloat(g('rEUR').value)||RATES.EUR;
+  RATES.at='manual'; ss(LS.rates,RATES); conv(); renderExp(); renderRefs();
+}
+async function fetchRates(){
+  toast('Buscando cotações…');
+  try{
+    const r=await fetch('https://open.er-api.com/v6/latest/BRL');
+    const j=await r.json();
+    if(j&&j.rates&&j.rates.CHF){
+      RATES.CHF=1/j.rates.CHF; RATES.EUR=1/j.rates.EUR; RATES.at=new Date().toISOString();
+      ss(LS.rates,RATES); fillRates(); conv(); renderExp(); renderRefs(); toast('Cotações atualizadas');
+    } else throw 0;
+  }catch(e){toast('Sem internet — usando as cotações salvas')}
+}
+function fillRates(){
+  g('rCHF').value=RATES.CHF.toFixed(2); g('rEUR').value=RATES.EUR.toFixed(2);
+  g('rateInfo').textContent = RATES.at&&RATES.at!=='manual'
+    ? 'Atualizado em '+new Date(RATES.at).toLocaleString('pt-BR')
+    : 'Valores editados à mão. Toque em Atualizar quando tiver internet.';
+}
+function renderRefs(){
+  g('refPrices').innerHTML=REFS.map(([n,p])=>{
+    const [c,v]=p.split(' ');
+    return '<div class="catrow"><span class="muted">'+n+'</span><span><b>'+p+'</b> <span class="muted small">≈ '+fmtBRL0(parseFloat(v.replace(',','.'))*RATES[c])+'</span></span></div>';
+  }).join('');
+}
+
+/* =========================================================
+   8. CHECKLIST
+   ========================================================= */
+function renderChk(){
+  const now=new Date();
+  g('chkList').innerHTML=CHECK.map(c=>{
+    const done=!!CHKD[c.id], due=new Date(c.due+'T23:59:59');
+    const late=!done&&now>due, soon=!done&&(due-now)<30*864e5;
+    return '<div class="chk'+(done?' done':'')+'" onclick="tgl(\''+c.id+'\')">'+
+      '<div class="box">'+(done?'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg>':'')+'</div>'+
+      '<div class="grow"><div class="ctxt" style="font-weight:600;font-size:14.5px">'+c.t+'</div>'+
+      '<div class="small muted" style="margin-top:2px">'+c.n+'</div></div>'+
+      '<span class="due '+(done?'ok':late?'now':soon?'now':'')+'">'+(done?'ok':c.lbl)+'</span></div>';
+  }).join('');
+  const d=CHECK.filter(c=>CHKD[c.id]).length;
+  g('chkCount').textContent=d+' de '+CHECK.length;
+  g('chkBar').style.width=(d/CHECK.length*100)+'%';
+}
+function tgl(id){CHKD[id]=!CHKD[id];ss(LS.chk,CHKD);renderChk();renderHero()}
+
+/* =========================================================
+   9. SOS + FRASES
+   ========================================================= */
+function renderSos(){
+  g('sosOut').innerHTML=SOS.map(s=>'<div class="card" style="margin-bottom:12px"><div class="tiny">'+s.h+'</div>'+
+    s.r.map(([a,b])=>'<div class="em"><div style="font-weight:620;font-size:14.5px">'+a+'</div><div class="small muted">'+b+'</div></div>').join('')+
+    '</div>').join('');
+}
+function setLang(l){
+  lang=l;document.querySelectorAll('[data-l]').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  g('langNote').textContent=PHRASES[l].note;
+  g('phrases').innerHTML=PHRASES[l].list.map(([a,b,c])=>
+    '<div class="ph"><b>'+a+'</b> <i>['+b+']</i><span>'+c+'</span></div>').join('');
+}
+
+/* =========================================================
+   10. INIT
+   ========================================================= */
+g('eCat').innerHTML=CATS.map(c=>'<option>'+c[1]+'</option>').join('');
+g('eDate').value=new Date().toISOString().slice(0,10);
+g('cfgUrl').value=CFG.url||'';
+fillRates(); renderRefs(); conv();
+renderDays(); renderQuick(); renderExp(); renderBag(); renderChk(); renderSos(); setLang('de'); renderHero();
+if(CFG.url){badge(QUEUE.length?'err':'ok',QUEUE.length?QUEUE.length+' pendente(s)':'planilha');syncNow()}
+setInterval(renderHero,1000);
+window.addEventListener('online',flush);
+</script>
+</body>
+</html>
