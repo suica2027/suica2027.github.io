@@ -460,15 +460,18 @@ const DAYS=[
   {t:'16:37',x:'Chegada em St. Moritz',b:'warn',n:'Hotel Piz a ~10 min. Atenção: a recepção fecha às 23h.'},
   {t:'18:00',x:'Lago congelado e jantar',n:'St. Moritz é caríssima — jantar simples ou compras no Coop resolve bem. É no lago congelado que acontecem o polo e as corridas de cavalo na neve.'}]},
 
-{d:'2027-02-12',dow:'sex',city:'Milão',ttl:'Bernina Express → Milão',sub:'Patrimônio UNESCO',stay:'NYX Milan by Leonardo · Piazza IV Novembre 3',tz:TZ_EU,ev:[
-  {t:'08:00',x:'Manhã livre em St. Moritz',n:'Lago congelado, Via Serlas, café. Check-out.'},
-  {t:'10:06',x:'Bernina Express · St. Moritz → Tirano',b:'star',n:'No inverno só roda sexta, sábado e domingo — e hoje é sexta. Ospizio Bernina a 2.253 m entre lagos congelados, a geleira Morteratsch e o viaduto helicoidal de Brusio, onde o trem dá uma volta completa sobre si mesmo.'},
-  {t:'12:35',x:'Chegada em Tirano · almoço',n:'Já é Itália: o preço cai pela metade em relação à Suíça.'},
-  {t:'13:20',x:'Trenord · Tirano → Milano Centrale',b:'move',n:'2h30 direto, saídas a cada hora.'},
-  {t:'15:50',x:'Chegada em Milão · NYX Hotel',n:'Colado na estação Centrale. Taxa de cidade de EUR 20 por quarto na chegada.'},
-  {t:'17:00',x:'Duomo e Galleria Vittorio Emanuele II',n:'Metrô M3, 3 paradas. Fachada iluminada e a Piazza della Scala.'},
-  {t:'19:30',x:'Jantar na Osteria da Fortunata',b:'star',n:'Unidade Brera, 15 min a pé do Duomo, aberta até 1h. Massa fresca feita à mão na vitrine. Pedir carbonara, cacio e pepe ou amatriciana. Não aceita reserva e enche.'},
-  {t:'21:30',x:'Brera à noite ou um drink nos Navigli'}]},
+{d:'2027-02-12',dow:'sex',city:'Milão',ttl:'Bernina Express → Milão',sub:'Manhã em St. Moritz · Bernina às 15:30',stay:'NYX Milan by Leonardo · Piazza IV Novembre 3',tz:TZ_EU,ev:[
+  {t:'08:30',x:'Café da manhã e o lago congelado',n:'Buffet incluído no Hotel Piz. Depois, a volta a pé pelo Lej da San Murezzan: plana, ~1h, grátis.'},
+  {t:'10:30',x:'Check-out · malas guardadas na recepção',n:'Check-out até as 11h. Pedir para deixar a bagagem até a tarde — o trem só sai às 15:30.'},
+  {t:'11:00',x:'Muottas Muragl (opcional, só com céu aberto)',n:'Trem RhB St. Moritz → Punt Muragl (~10 min, coberto pelo passe) + funicular de 10 min, saídas às :15 e :45. A vista clássica dos lagos da Engadina e do maciço do Bernina; o terraço abre ao meio-dia. O funicular não tem desconto do passe — conferir o preço no guichê. Plano B gratuito: St. Moritz Dorf, a torre inclinada e a Via Serlas.'},
+  {t:'13:00',x:'Almoço',n:'Coop ou Migros para economizar e comprar lanche e água para o trem — a bordo só aceitam cartão.'},
+  {t:'14:30',x:'Buscar as malas e ir para a estação',b:'warn',n:'Estar na plataforma às 15:10. A reserva NÃO é bilhete: levar o Swiss Travel Pass (ou o bilhete) + a confirmação da reserva + passaporte.'},
+  {t:'15:30',x:'Bernina Express 975 · St. Moritz → Tirano',b:'star',n:'Carro 13, 2ª classe panorâmica. Deise e Luciano: assentos 51–52. Guilherme e Brenda: 53 e 58. Ospizio Bernina a 2.253 m entre lagos congelados, Alp Grüm com a geleira Palü e, já no fim da tarde, o viaduto helicoidal de Brusio, onde o trem dá uma volta completa sobre si mesmo. Reserva não pode ser alterada nem reembolsada.'},
+  {t:'18:00',x:'Chegada em Tirano · trocar de estação',b:'warn',n:'A estação da Trenord fica colada à da RhB, 2–3 min a pé. O bilhete Tirano → Milão (~EUR 13) não é coberto pelo passe: comprar antes no app da Trenord.'},
+  {t:'18:08',x:'Trenord · Tirano → Milano Centrale',b:'move',n:'~2h30 direto. Na grade atual sai às 18:08; se o Bernina atrasar, o próximo é às 19:08 (chegada ~21:40). A grade de 2027 muda em dezembro — reconferir.'},
+  {t:'20:40',x:'Chegada em Milão · NYX Hotel',n:'Colado na Centrale. Check-in até meia-noite. Taxa de cidade de EUR 20 por quarto na chegada.'},
+  {t:'21:15',x:'Duomo iluminado e Galleria Vittorio Emanuele II',n:'Metrô M3, 4 paradas. A Galleria fica aberta à noite e é ainda mais bonita vazia.'},
+  {t:'21:45',x:'Jantar na Osteria da Fortunata',b:'star',n:'Unidade Brera, 15 min a pé do Duomo, aberta até 1h. Massa fresca feita à mão na vitrine. Pedir carbonara, cacio e pepe ou amatriciana. Não aceita reserva.'}]},
 
 {d:'2027-02-13',dow:'sáb',city:'Volta',ttl:'Milão e voo de volta',sub:'Último dia',stay:'Em voo',tz:TZ_EU,ev:[
   {t:'08:30',x:'Duomo · terraços',b:'star',n:'Caminhar entre as agulhas de mármore é a melhor coisa de Milão. Ingresso online com horário, ~EUR 17 com elevador.'},
@@ -491,9 +494,9 @@ const CHECK=[
  {id:'c1',t:'Conferir validade dos 4 passaportes',n:'Precisam valer até pelo menos ago/2027 — 6 meses após o retorno.',due:'2026-09-30',lbl:'Agora'},
  {id:'c2',t:'Confirmar bagagem despachada NVT → Bruxelas',n:'A conexão em Madri é de só 2h05 com desembarque internacional. Ligar para a William Viagens.',due:'2026-09-30',lbl:'Agora'},
  {id:'c3',t:'Reservar o Glacier Express (11/02)',n:'Reserva de assento obrigatória e esgota. Horários de 2027 abrem por volta de outubro/2026.',due:'2026-10-31',lbl:'Out/2026'},
- {id:'c4',t:'Reservar o Bernina Express (12/02)',n:'No inverno só roda sex/sáb/dom. 12/02 é sexta — dá certo, mas precisa reserva.',due:'2026-11-15',lbl:'Nov/2026'},
+ {id:'c4',t:'Bilhetes do Bernina: pedir reembolso se o passe cobrir 12/02',n:'✅ Reserva feita (trem 975, 15:30). Mas a agência também comprou 4 bilhetes St. Moritz→Tirano a CHF 35 cada. O Swiss Travel Pass de 8 dias (05–12/02) já cobre esse trecho inteiro, até Tirano. Se ficar o passe, pedir à William Viagens o reembolso SÓ dos bilhetes (não da reserva): RhB devolve até 1 dia antes, com taxa de CHF 10.',due:'2026-12-15',lbl:'Dez/2026'},
  {id:'c5',t:'Decidir Swiss Travel Pass × Half Fare Card',n:'Preços de 2027 saem por volta de nov/2026. A escolha certa economiza CHF 800–1.300 no grupo.',due:'2026-11-30',lbl:'Nov/2026'},
- {id:'c6',t:'Comprar os trens entre cidades',n:'Zurique→Interlaken, Interlaken→Zermatt, St. Moritz→Tirano→Milão e os bate-voltas.',due:'2026-12-15',lbl:'Dez/2026'},
+ {id:'c6',t:'Comprar os trens entre cidades',n:'Com o Swiss Travel Pass, os trens suíços estão cobertos. Fica de fora: Trenord Tirano→Milão (~EUR 13/pessoa, app Trenord) e o Malpensa Express.',due:'2026-12-15',lbl:'Dez/2026'},
  {id:'c7',t:'Ingresso do Lindt Home of Chocolate',n:'Hora marcada, esgota. CHF 17 por adulto.',due:'2026-12-20',lbl:'Dez/2026'},
  {id:'c8',t:'Reconferir exigência de ETIAS',n:'Em ago/2026 estava adiado para 2027 e não era exigido. O EES (biometria) já vale desde 10/04/2026.',due:'2026-12-20',lbl:'Dez/2026'},
  {id:'c9',t:'Campanário de Bruges e terraços do Duomo',n:'Ingresso online com horário.',due:'2027-01-15',lbl:'Jan/2027'},
@@ -515,12 +518,18 @@ const SOS=[
   ['13/02 · Air Europa 57','MAD 23:55 (T1) → GRU 06:30'],
   ['14/02 · Gol 1224','GRU 09:05 (T2) → NVT 10:15']]},
  {h:'🏨 Hotéis',r:[
-  ['Ibis Brussels City Centre','Rue Joseph Plateau 2, 1000 Brussels · 02–05/02'],
-  ['Ibis Styles Zurich City Center','Stampfenbachstrasse 60, 8006 Zürich · 05–07/02'],
-  ['Hotel Bernerhof','Bahnhofstrasse 16, 3800 Interlaken · 07–10/02'],
-  ['Hotel Adonis','Luchernstrasse 31, 3920 Zermatt · 10–11/02'],
-  ['Hotel Piz','Via dal Bagn 6, 7500 St. Moritz · 11–12/02 · recepção até 23h'],
-  ['NYX Milan by Leonardo','Piazza IV Novembre 3, 20214 Milano · 12–13/02']]},
+  ['Ibis Brussels City Centre','Rue Joseph Plateau 2, 1000 Brussels · 02–05/02 · loc. 9102886539505 · taxa EUR 16,80/quarto'],
+  ['Ibis Styles Zurich City Center','Stampfenbachstrasse 60, 8006 Zürich · 05–07/02 · loc. 9094547243327 · check-out 12h · taxa CHF 14/quarto'],
+  ['Hotel Bernerhof','Bahnhofstrasse 16, 3800 Interlaken · 07–10/02 · loc. 9089556383245 · recepção 7h–21h30, sem check-in depois'],
+  ['Hotel Adonis','Luchernstrasse 31, 3920 Zermatt · 10–11/02 · loc. 2JOCIZ · multa a partir de 03/02'],
+  ['Hotel Piz','Via dal Bagn 6, 7500 St. Moritz · 11–12/02 · loc. 9102861036578 · recepção até 23h · taxa CHF 6,10/quarto'],
+  ['NYX Milan by Leonardo','Piazza IV Novembre 3, 20214 Milano · 12–13/02 · loc. 207-16646115 · taxa EUR 20/quarto']]},
+ {h:'🚆 Trens reservados',r:[
+  ['12/02 · Bernina Express 975','St. Moritz 15:30 → Tirano 18:00 · carro 13, 2ª cl. panorâmica'],
+  ['Deise e Luciano','Assentos 51–52 · reserva 3020385-1'],
+  ['Guilherme e Brenda','Assentos 53 e 58 · reserva 3020396-1'],
+  ['RhB Railservice','+41 81 288 65 65 · railservice@rhb.ch'],
+  ['12/02 · Trenord','Tirano 18:08 → Milano Centrale 20:40 · comprar no app']]},
  {h:'🆘 Emergência',r:[
   ['Europa — número único','112'],
   ['Suíça — ambulância','144'],
@@ -528,7 +537,8 @@ const SOS=[
   ['Itália — carabinieri','112'],
   ['Bélgica — polícia','101']]},
  {h:'📋 Reservas e seguro',r:[
-  ['Assist Card','Plano 35 · válido 01 a 14/02 · médico EUR 35.000'],
+  ['Assist Card','Plano 35 · válido 01 a 14/02 · médico EUR 35.000 · (11) 3146-8719'],
+  ['Orinter (operadora) · 24h','+55 11 3514-4400 · WhatsApp/telefone'],
   ['Agência','William Viagens · (47) 99218-1882'],
   ['E-mail da agência','viagens.william@gmail.com'],
   ['Reserva aérea','ID 13492762'],
@@ -549,7 +559,7 @@ const PHRASES={
  list:[['Buongiorno','bon-DJOR-no','Bom dia'],['Grazie mille','GRA-tsie MI-le','Muito obrigado'],['Per favore','per fa-VO-re','Por favor'],['Scusi','SKU-zi','Com licença'],['Parla inglese?','PAR-la in-GLE-ze','Você fala inglês?'],['Il conto, per favore','il KON-to per fa-VO-re','A conta, por favor'],['Quanto costa?','KUAN-to KOS-ta','Quanto custa?'],['Un tavolo per quattro','un TA-vo-lo per KUA-tro','Uma mesa para quatro'],['Vorrei un vino rosso','vo-RÊI un VI-no RO-so','Queria um vinho tinto'],['Dov\'è la stazione?','do-VÊ la sta-TSIO-ne','Onde fica a estação?'],['Uscita','u-SHI-ta','Saída'],['Arrivederci','a-ri-ve-DER-tchi','Até logo']]}
 };
 
-const REFS=[['Sanduíche no Coop/Migros','CHF 10'],['Prato em restaurante suíço','CHF 32'],['Café expresso','CHF 4,50'],['Cerveja em Bruxelas','EUR 5'],['Waffle belga na rua','EUR 4'],['Gornergrat (com passe)','CHF 66'],['Jungfraujoch (com passe)','CHF 160'],['Lindt Home of Chocolate','CHF 17'],['Terraços do Duomo','EUR 17'],['Pizza/massa em Milão','EUR 14']];
+const REFS=[['Sanduíche no Coop/Migros','CHF 10'],['Prato em restaurante suíço','CHF 32'],['Café expresso','CHF 4,50'],['Cerveja em Bruxelas','EUR 5'],['Waffle belga na rua','EUR 4'],['Gornergrat (com passe)','CHF 66'],['Jungfraujoch (com passe)','CHF 160'],['Lindt Home of Chocolate','CHF 17'],['Terraços do Duomo','EUR 17'],['Pizza/massa em Milão','EUR 14'],['Trenord Tirano→Milão','EUR 13']];
 
 /* =========================================================
    2. ESTADO
